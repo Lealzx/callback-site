@@ -6,7 +6,7 @@
 
 <div class="bg-video">
     <video autoplay loop muted playsinline>
-        <source src="Pi7_GIF_CMP_18-ezgif.com-gif-to-mp4-converter.mp4" type="video/mp4">
+        <source src="/Pi7_GIF_CMP_18-ezgif.com-gif-to-mp4-converter.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 </div>
@@ -30,8 +30,10 @@ window.onload = () => {
 </script>
 
 <style>
-body {
-    margin: 0;
+html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    overflow: hidden;
     font-family: Arial, sans-serif;
     color: #fff;
 }
@@ -39,21 +41,26 @@ body {
 .bg-video {
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    z-index: -2;
+    z-index: -3;
 }
 
 .bg-video video {
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
+    z-index: -2;
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0,0,0,0.4);
     z-index: -1;
 }
@@ -75,6 +82,8 @@ p, small, span {
     text-align: center;
     padding: 60px;
     background-color: rgba(49,54,63,0.85);
+    position: relative;
+    z-index: 1;
 }
 
 #server_pic {

